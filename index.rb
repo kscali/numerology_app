@@ -42,10 +42,14 @@ def get_message(birth_path_num)
 end
 
 get '/' do
+  erb :form
+end
 
-   puts "Please enter your birthdate in mmddyyyy format."
-
-   birthdate = gets.chomp
+post '/' do
+  birthdate = params[:birthdate]
+  birth_path_num = get_birth_path_num(birthdate)
+  @message = get_message(birth_path_num)
+  erb :index
 end
 
 get '/:newpage' do
