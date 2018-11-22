@@ -8,12 +8,20 @@
   <meta name="description" content="Numerology App">
   <meta name="author" content="SitePoint">
 
-  <link rel="stylesheet" href="css/styles.css?v=1.0">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
 
 </head>
 
 <body>
-  <p><%= yield %></p>
+  <div class="header">
+    <h1 style="text-align: center">Numerology App</h1>
+  </div>
+
+  <hr />
+  <div class="container">
+    <%= yield %>
+  </div>
+
   <script src="js/scripts.js"></script>
 </body>
 </html>

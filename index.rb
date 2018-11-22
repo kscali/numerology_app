@@ -54,7 +54,8 @@ get '/' do
 end
 
 post '/' do
-  setup_index_view
+  birth_path_num = params[:birthdate].gsub("-,"")
+  redirect "/message/#{birth_path_num}"
 end
 
 get '/:newpage' do
@@ -63,4 +64,10 @@ end
 
 get '/:birthdate' do
   setup_index_view
+end
+
+get '/message/:birth_path_num' do
+  birth_path_num = params[:birth_path_num].to_i
+  @message = get_message(birth_path_num)
+  erb :index
 end
